@@ -4096,56 +4096,56 @@ namespace HolaMundo
             //Directory.CreateDirectory(rutaComp1eta);
             //Console.WriteLine($"E1 directorio se creö en: {rutaComp1eta}");
 
-            //Copiar un directorio
+            ////Copiar un directorio
 
-            string origenDirectorio = @""; // Ruta de origen del directorio
-            string destinoDirectorio = @""; // Ruta de destino del directorio
+        //    string origenDirectorio = @""; // Ruta de origen del directorio
+        //    string destinoDirectorio = @""; // Ruta de destino del directorio
 
-            // Llamamos al método "CopiarDirectorio" y le enviamos el origen y destino como argumentos
-            CopiarDirectorio(origenDirectorio, destinoDirectorio);
-        }
+        //    // Llamamos al método "CopiarDirectorio" y le enviamos el origen y destino como argumentos
+        //    CopiarDirectorio(origenDirectorio, destinoDirectorio);
+        //}
 
-        static public void CopiarDirectorio(string origenDirectorioPa, string destinoDirectorioPa)
-        {
-            // Verificar si el directorio de destino no existe, crearlo si es necesario
-            if (!Directory.Exists(destinoDirectorioPa))
-            {
-                Directory.CreateDirectory(destinoDirectorioPa);
-            }
+        //static public void CopiarDirectorio(string origenDirectorioPa, string destinoDirectorioPa)
+        //{
+        //    // Verificar si el directorio de destino no existe, crearlo si es necesario
+        //    if (!Directory.Exists(destinoDirectorioPa))
+        //    {
+        //        Directory.CreateDirectory(destinoDirectorioPa);
+        //    }
 
-            // Matriz para guardar las rutas completas de los archivos del directorio de origen
-            string[] archivos = Directory.GetFiles(origenDirectorioPa);
+        //    // Matriz para guardar las rutas completas de los archivos del directorio de origen
+        //    string[] archivos = Directory.GetFiles(origenDirectorioPa);
 
-            // Copiar archivos desde el directorio de origen al directorio de destino
-            foreach (string archivoRutaOrigen in archivos)
-            {
-                // Asignamos el nombre del archivo (matriz) y su extensión a la variable "nombre"
-                string nombreArchivo = Path.GetFileName(archivoRutaOrigen);
+        //    // Copiar archivos desde el directorio de origen al directorio de destino
+        //    foreach (string archivoRutaOrigen in archivos)
+        //    {
+        //        // Asignamos el nombre del archivo (matriz) y su extensión a la variable "nombre"
+        //        string nombreArchivo = Path.GetFileName(archivoRutaOrigen);
 
-                // Concatenamos la ruta de destino con el nombre de cada archivo que obtuvimos de la matriz
-                string rutaCompletaArchivoDestino = Path.Combine(destinoDirectorioPa, nombreArchivo);
+        //        // Concatenamos la ruta de destino con el nombre de cada archivo que obtuvimos de la matriz
+        //        string rutaCompletaArchivoDestino = Path.Combine(destinoDirectorioPa, nombreArchivo);
 
-                // Copiamos el archivo de la ruta original en la nueva ruta
-                File.Copy(archivoRutaOrigen, rutaCompletaArchivoDestino);
-            }
+        //        // Copiamos el archivo de la ruta original en la nueva ruta
+        //        File.Copy(archivoRutaOrigen, rutaCompletaArchivoDestino);
+        //    }
 
-            // Matriz para los nombres de los directorios
-            string[] subdirectorios = Directory.GetDirectories(origenDirectorioPa);
+        //    // Matriz para los nombres de los directorios
+        //    string[] subdirectorios = Directory.GetDirectories(origenDirectorioPa);
 
-            // Recorrer y copiar subdirectorios de manera recursiva
-            foreach (string subdirectorioRutaOrigen in subdirectorios)
-            {
-                // Obtenemos el nombre de cada directorio contenido en la matriz y se lo asignamos a la variable "nombreSubdirectorio"
-                string nombreSubdirectorio = Path.GetFileName(subdirectorioRutaOrigen);
+        //    // Recorrer y copiar subdirectorios de manera recursiva
+        //    foreach (string subdirectorioRutaOrigen in subdirectorios)
+        //    {
+        //        // Obtenemos el nombre de cada directorio contenido en la matriz y se lo asignamos a la variable "nombreSubdirectorio"
+        //        string nombreSubdirectorio = Path.GetFileName(subdirectorioRutaOrigen);
 
-                // Concatenamos la ruta de destino con el nombre de cada directorio que obtuvimos de la matriz
-                string rutaCompletaSubdirectorioDestino = Path.Combine(destinoDirectorioPa, nombreSubdirectorio);
+        //        // Concatenamos la ruta de destino con el nombre de cada directorio que obtuvimos de la matriz
+        //        string rutaCompletaSubdirectorioDestino = Path.Combine(destinoDirectorioPa, nombreSubdirectorio);
 
-                // Llamada recursiva para copiar el subdirectorio y sus contenidos.
-                // Ahora el nombre completo del subdirectorio será el parámetro "OrigenDirectorioPa"
-                // Y "rutaCompletaSubdirectorio" será el parámetro "destinoDirectorioPa"
-                CopiarDirectorio(subdirectorioRutaOrigen, rutaCompletaSubdirectorioDestino);
-            }
+        //        // Llamada recursiva para copiar el subdirectorio y sus contenidos.
+        //        // Ahora el nombre completo del subdirectorio será el parámetro "OrigenDirectorioPa"
+        //        // Y "rutaCompletaSubdirectorio" será el parámetro "destinoDirectorioPa"
+        //        CopiarDirectorio(subdirectorioRutaOrigen, rutaCompletaSubdirectorioDestino);
+        //    }
         }
     }
 }
